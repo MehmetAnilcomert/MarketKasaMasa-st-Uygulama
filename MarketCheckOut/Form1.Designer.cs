@@ -62,7 +62,7 @@
             btnDomates.TabStop = false;
             btnDomates.Text = "Domates";
             btnDomates.UseVisualStyleBackColor = true;
-            btnDomates.Click += btnDomates_click;
+            btnDomates.Click += btnUrun_Click;
             // 
             // btnBiber
             // 
@@ -74,7 +74,7 @@
             btnBiber.TabStop = false;
             btnBiber.Text = "Biber";
             btnBiber.UseVisualStyleBackColor = true;
-            btnBiber.Click += btnBiber_Click;
+            btnBiber.Click += btnUrun_Click;
             // 
             // btnPatlican
             // 
@@ -86,7 +86,7 @@
             btnPatlican.TabStop = false;
             btnPatlican.Text = "Patlıcan";
             btnPatlican.UseVisualStyleBackColor = true;
-            btnPatlican.Click += btnPatlican_Click;
+            btnPatlican.Click += btnUrun_Click;
             // 
             // btnKredi
             // 
@@ -98,7 +98,6 @@
             btnKredi.TabStop = false;
             btnKredi.Text = "Kredi Kartı";
             btnKredi.UseVisualStyleBackColor = true;
-            btnKredi.Click += button4_Click;
             // 
             // btnPeynirHelva
             // 
@@ -110,7 +109,7 @@
             btnPeynirHelva.TabStop = false;
             btnPeynirHelva.Text = "Peynir Helvası (350 gr.)";
             btnPeynirHelva.UseVisualStyleBackColor = true;
-            btnPeynirHelva.Click += btnPeynirHelva_Click;
+            btnPeynirHelva.Click += btnUrun_Click;
             // 
             // btnBaklava
             // 
@@ -122,7 +121,7 @@
             btnBaklava.TabStop = false;
             btnBaklava.Text = "Baklava";
             btnBaklava.UseVisualStyleBackColor = true;
-            btnBaklava.Click += btnBaklava_Click;
+            btnBaklava.Click += btnUrun_Click;
             // 
             // btnGazoz
             // 
@@ -134,7 +133,7 @@
             btnGazoz.TabStop = false;
             btnGazoz.Text = "Gazoz";
             btnGazoz.UseVisualStyleBackColor = true;
-            btnGazoz.Click += btnGazoz_Click;
+            btnGazoz.Click += btnUrun_Click;
             // 
             // btnNakit
             // 
@@ -180,7 +179,7 @@
             btnSoda.TabStop = false;
             btnSoda.Text = "Sade Soda";
             btnSoda.UseVisualStyleBackColor = true;
-            btnSoda.Click += btnSoda_Click;
+            btnSoda.Click += btnUrun_Click;
             // 
             // btnChocolate
             // 
@@ -192,7 +191,7 @@
             btnChocolate.TabStop = false;
             btnChocolate.Text = "Çikolata";
             btnChocolate.UseVisualStyleBackColor = true;
-            btnChocolate.Click += btnChocolate_Click;
+            btnChocolate.Click += btnUrun_Click;
             // 
             // btnDondurma
             // 
@@ -204,7 +203,7 @@
             btnDondurma.TabStop = false;
             btnDondurma.Text = "Dondurma";
             btnDondurma.UseVisualStyleBackColor = true;
-            btnDondurma.Click += btnDondurma_Click;
+            btnDondurma.Click += btnUrun_Click;
             // 
             // lbToplamBakiye
             // 
@@ -215,7 +214,6 @@
             lbToplamBakiye.Size = new Size(148, 62);
             lbToplamBakiye.TabIndex = 13;
             lbToplamBakiye.Text = "0.00";
-            lbToplamBakiye.Click += label2_Click;
             // 
             // btnKapat
             // 
@@ -229,7 +227,7 @@
             btnKapat.TabStop = false;
             btnKapat.Text = "Formu Kapat";
             btnKapat.UseVisualStyleBackColor = false;
-            btnKapat.Click += btnKapat_Click;
+            btnKapat.Click += btnUrun_Click;
             // 
             // gbMiktar
             // 
@@ -243,7 +241,6 @@
             gbMiktar.TabIndex = 15;
             gbMiktar.TabStop = false;
             gbMiktar.Visible = false;
-            gbMiktar.Enter += groupBox1_Enter;
             // 
             // txtMiktar
             // 
@@ -254,7 +251,7 @@
             txtMiktar.TabIndex = 0;
             txtMiktar.Text = "1";
             txtMiktar.TextAlign = HorizontalAlignment.Center;
-            txtMiktar.TextChanged += txtMiktar_Changed;
+            txtMiktar.TextChanged += txtMiktar_TextChanged;
             // 
             // btnVazgec
             // 
