@@ -149,22 +149,24 @@
             // 
             // sepetGrid
             // 
+            sepetGrid.AllowUserToOrderColumns = true;
             sepetGrid.BackgroundColor = Color.RosyBrown;
             sepetGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            sepetGrid.Location = new Point(649, 12);
+            sepetGrid.Location = new Point(681, 12);
             sepetGrid.Name = "sepetGrid";
             sepetGrid.RowHeadersWidth = 51;
-            sepetGrid.Size = new Size(678, 634);
+            sepetGrid.Size = new Size(681, 634);
             sepetGrid.TabIndex = 8;
             sepetGrid.TabStop = false;
+            sepetGrid.CellContentClick += sepetGrid_CellContentClick;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.ForestGreen;
-            label1.Location = new Point(828, 649);
+            label1.Location = new Point(898, 649);
             label1.Name = "label1";
-            label1.Size = new Size(430, 138);
+            label1.Size = new Size(360, 138);
             label1.TabIndex = 9;
             label1.Text = "Toplam Bakiye:";
             // 
@@ -208,9 +210,9 @@
             // 
             lbToplamBakiye.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lbToplamBakiye.ForeColor = Color.ForestGreen;
-            lbToplamBakiye.Location = new Point(975, 709);
+            lbToplamBakiye.Location = new Point(1045, 709);
             lbToplamBakiye.Name = "lbToplamBakiye";
-            lbToplamBakiye.Size = new Size(218, 62);
+            lbToplamBakiye.Size = new Size(148, 62);
             lbToplamBakiye.TabIndex = 13;
             lbToplamBakiye.Text = "0.00";
             lbToplamBakiye.Click += label2_Click;
@@ -288,7 +290,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1324, 799);
+            ClientSize = new Size(1374, 799);
             Controls.Add(gbMiktar);
             Controls.Add(btnKapat);
             Controls.Add(lbToplamBakiye);

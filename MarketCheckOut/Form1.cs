@@ -1,12 +1,12 @@
+using System.ComponentModel;
 using System.Text.RegularExpressions;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace MarketCheckOut
 {
     public partial class Form1 : Form
     {
         decimal toplamBakiye = 0;
-        List<Product> products = new List<Product>();
+        BindingList<Product> products = new BindingList<Product>();
 
         Product product;
 
@@ -23,8 +23,20 @@ namespace MarketCheckOut
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SepetToplam();
+            sepetGrid.AutoGenerateColumns = true;
 
+            sepetGrid.DataSource = products;
+
+            DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+            deleteButton.Name = "Delete";
+            deleteButton.Text = "Sil";
+            deleteButton.UseColumnTextForButtonValue = true;
+
+            sepetGrid.Columns.Add(deleteButton);
+
+            sepetGrid.Columns[0].Visible = false;
+
+            SepetToplam();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -34,25 +46,16 @@ namespace MarketCheckOut
 
         private void SepetiGoster()
         {
-            sepetGrid.DataSource = "";
+            sepetGrid.DataSource = null;
             sepetGrid.DataSource = products;
-
-            sepetGrid.Columns[0].Visible = false;
-            sepetGrid.Columns[1].HeaderText = "Ürün Adı";
-            sepetGrid.Columns[2].HeaderText = "Ürün Miktarı";
-            sepetGrid.Columns[3].HeaderText = "Birim Fiyatı";
-            sepetGrid.Columns[4].HeaderText = "Toplam Fiyatı";
 
             SepetToplam();
         }
 
         private void SepetToplam()
         {
-            decimal toplam = 0;
-            foreach (var item in products)
-            {
-                toplam += item.TotalPrice;
-            }
+            decimal toplam = products.Sum(p => p.TotalPrice);
+
             lbToplamBakiye.Text = String.Format("{0:C2}", toplam);
         }
 
@@ -61,7 +64,7 @@ namespace MarketCheckOut
             gbMiktar.Visible = true;
             BtnDurumDegis(false);
 
-            product = new Product(products.Count + 1, _name, 1, _unitPrice); 
+            product = new Product(products.Count + 1, _name, 1, _unitPrice);
         }
 
         // -------------- Ürün ekleme kısmı ---------------------
@@ -122,14 +125,29 @@ namespace MarketCheckOut
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            product.Quantity = Convert.ToInt16(txtMiktar.Text);
-            product.TotalPrice = product.Quantity * product.UnitPrice;
-            products.Add(product);
+            int qty = int.Parse(txtMiktar.Text);
+
+            var existingProduct = products.FirstOrDefault(p => p.Name == product.Name);
+
+            if (existingProduct != null)
+            {
+                existingProduct.Quantity += qty;
+                existingProduct.TotalPrice = existingProduct.Quantity * existingProduct.UnitPrice;
+            }
+            else
+            {
+                product.Quantity = qty;
+                product.TotalPrice = product.Quantity * product.UnitPrice;
+
+                products.Add(product);
+            }
+
+            sepetGrid.Refresh();
 
             gbMiktar.Visible = false;
             BtnDurumDegis(true);
 
-            SepetiGoster();
+            SepetToplam();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -169,6 +187,21 @@ namespace MarketCheckOut
                 txtMiktar.Text = input.Remove(input.Length - 1);
                 txtMiktar.Focus();
                 txtMiktar.SelectAll();
+            }
+        }
+
+        private void sepetGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (sepetGrid.Columns[e.ColumnIndex].Name == "Delete" && e.RowIndex >= 0)
+            {
+                if (MessageBox.Show("Ürünü silmek istiyor musunuz?",
+                                   "Onay",
+                                   MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    products.RemoveAt(e.RowIndex);
+
+                    SepetToplam();
+                }
             }
         }
     }
