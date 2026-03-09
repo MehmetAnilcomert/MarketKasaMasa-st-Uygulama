@@ -67,6 +67,7 @@
             btnBiber.TabStop = false;
             btnBiber.Text = "Biber";
             btnBiber.UseVisualStyleBackColor = true;
+            btnBiber.Click += btnBiber_Click;
             // 
             // btnPatlican
             // 
@@ -78,7 +79,7 @@
             btnPatlican.TabStop = false;
             btnPatlican.Text = "Patlıcan";
             btnPatlican.UseVisualStyleBackColor = true;
-            btnPatlican.Click += button3_Click_1;
+            btnPatlican.Click += btnPatlican_Click;
             // 
             // btnKredi
             // 
@@ -102,6 +103,7 @@
             btnPeynirHelva.TabStop = false;
             btnPeynirHelva.Text = "Peynir Helvası (350 gr.)";
             btnPeynirHelva.UseVisualStyleBackColor = true;
+            btnPeynirHelva.Click += btnPeynirHelva_Click;
             // 
             // btnBaklava
             // 
@@ -113,6 +115,7 @@
             btnBaklava.TabStop = false;
             btnBaklava.Text = "Baklava";
             btnBaklava.UseVisualStyleBackColor = true;
+            btnBaklava.Click += btnBaklava_Click;
             // 
             // btnGazoz
             // 
@@ -124,6 +127,7 @@
             btnGazoz.TabStop = false;
             btnGazoz.Text = "Gazoz";
             btnGazoz.UseVisualStyleBackColor = true;
+            btnGazoz.Click += btnGazoz_Click;
             // 
             // btnNakit
             // 
@@ -167,6 +171,7 @@
             btnSoda.TabStop = false;
             btnSoda.Text = "Sade Soda";
             btnSoda.UseVisualStyleBackColor = true;
+            btnSoda.Click += btnSoda_Click;
             // 
             // btnChocolate
             // 
@@ -178,6 +183,7 @@
             btnChocolate.TabStop = false;
             btnChocolate.Text = "Çikolata";
             btnChocolate.UseVisualStyleBackColor = true;
+            btnChocolate.Click += btnChocolate_Click;
             // 
             // btnDondurma
             // 
@@ -189,7 +195,7 @@
             btnDondurma.TabStop = false;
             btnDondurma.Text = "Dondurma";
             btnDondurma.UseVisualStyleBackColor = true;
-            btnDondurma.Click += button11_Click;
+            btnDondurma.Click += btnDondurma_Click;
             // 
             // lbToplamBakiye
             // 
