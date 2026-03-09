@@ -42,7 +42,14 @@
             btnChocolate = new Button();
             btnDondurma = new Button();
             lbToplamBakiye = new Label();
+            btnKapat = new Button();
+            gbMiktar = new GroupBox();
+            txtMiktar = new TextBox();
+            btnVazgec = new Button();
+            btnKaydet = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)sepetGrid).BeginInit();
+            gbMiktar.SuspendLayout();
             SuspendLayout();
             // 
             // btnDomates
@@ -84,9 +91,9 @@
             // btnKredi
             // 
             btnKredi.Font = new Font("Segoe UI", 16.2F);
-            btnKredi.Location = new Point(12, 646);
+            btnKredi.Location = new Point(12, 649);
             btnKredi.Name = "btnKredi";
-            btnKredi.Size = new Size(202, 141);
+            btnKredi.Size = new Size(191, 138);
             btnKredi.TabIndex = 3;
             btnKredi.TabStop = false;
             btnKredi.Text = "Kredi Kartı";
@@ -132,9 +139,9 @@
             // btnNakit
             // 
             btnNakit.Font = new Font("Segoe UI", 16.2F);
-            btnNakit.Location = new Point(220, 646);
+            btnNakit.Location = new Point(209, 649);
             btnNakit.Name = "btnNakit";
-            btnNakit.Size = new Size(202, 141);
+            btnNakit.Size = new Size(191, 138);
             btnNakit.TabIndex = 7;
             btnNakit.TabStop = false;
             btnNakit.Text = "Nakit";
@@ -208,11 +215,82 @@
             lbToplamBakiye.Text = "0.00";
             lbToplamBakiye.Click += label2_Click;
             // 
+            // btnKapat
+            // 
+            btnKapat.BackColor = Color.FromArgb(192, 64, 0);
+            btnKapat.Font = new Font("Segoe UI", 16.2F);
+            btnKapat.ForeColor = SystemColors.ButtonFace;
+            btnKapat.Location = new Point(406, 649);
+            btnKapat.Name = "btnKapat";
+            btnKapat.Size = new Size(191, 141);
+            btnKapat.TabIndex = 14;
+            btnKapat.TabStop = false;
+            btnKapat.Text = "Formu Kapat";
+            btnKapat.UseVisualStyleBackColor = false;
+            btnKapat.Click += btnKapat_Click;
+            // 
+            // gbMiktar
+            // 
+            gbMiktar.Controls.Add(txtMiktar);
+            gbMiktar.Controls.Add(btnVazgec);
+            gbMiktar.Controls.Add(btnKaydet);
+            gbMiktar.Controls.Add(label2);
+            gbMiktar.Location = new Point(532, 353);
+            gbMiktar.Name = "gbMiktar";
+            gbMiktar.Size = new Size(243, 214);
+            gbMiktar.TabIndex = 15;
+            gbMiktar.TabStop = false;
+            gbMiktar.Visible = false;
+            gbMiktar.Enter += groupBox1_Enter;
+            // 
+            // txtMiktar
+            // 
+            txtMiktar.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            txtMiktar.Location = new Point(42, 48);
+            txtMiktar.Name = "txtMiktar";
+            txtMiktar.Size = new Size(142, 38);
+            txtMiktar.TabIndex = 0;
+            txtMiktar.Text = "1";
+            txtMiktar.TextAlign = HorizontalAlignment.Center;
+            txtMiktar.TextChanged += txtMiktar_Changed;
+            // 
+            // btnVazgec
+            // 
+            btnVazgec.BackColor = Color.OrangeRed;
+            btnVazgec.ForeColor = SystemColors.ButtonHighlight;
+            btnVazgec.Location = new Point(57, 160);
+            btnVazgec.Name = "btnVazgec";
+            btnVazgec.Size = new Size(116, 36);
+            btnVazgec.TabIndex = 2;
+            btnVazgec.Text = "Vazgeç";
+            btnVazgec.UseVisualStyleBackColor = false;
+            btnVazgec.Click += btnVazgec_Click;
+            // 
+            // btnKaydet
+            // 
+            btnKaydet.Location = new Point(57, 109);
+            btnKaydet.Name = "btnKaydet";
+            btnKaydet.Size = new Size(116, 36);
+            btnKaydet.TabIndex = 1;
+            btnKaydet.Text = "Kaydet";
+            btnKaydet.UseVisualStyleBackColor = true;
+            btnKaydet.Click += btnKaydet_Click;
+            // 
+            // label2
+            // 
+            label2.Location = new Point(81, 13);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 32);
+            label2.TabIndex = 0;
+            label2.Text = "Miktar:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1324, 799);
+            Controls.Add(gbMiktar);
+            Controls.Add(btnKapat);
             Controls.Add(lbToplamBakiye);
             Controls.Add(btnSoda);
             Controls.Add(btnChocolate);
@@ -234,6 +312,8 @@
             Text = "AnadoluTat1071 Market";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)sepetGrid).EndInit();
+            gbMiktar.ResumeLayout(false);
+            gbMiktar.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -253,5 +333,11 @@
         private Button btnChocolate;
         private Button btnDondurma;
         private Label lbToplamBakiye;
+        private Button btnKapat;
+        private GroupBox gbMiktar;
+        private Button btnVazgec;
+        private Button btnKaydet;
+        private Label label2;
+        private TextBox txtMiktar;
     }
 }
