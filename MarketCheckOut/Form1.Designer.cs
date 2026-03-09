@@ -36,13 +36,13 @@
             btnBaklava = new Button();
             btnGazoz = new Button();
             btnNakit = new Button();
-            dataGridView1 = new DataGridView();
+            sepetGrid = new DataGridView();
             label1 = new Label();
             btnSoda = new Button();
             btnChocolate = new Button();
             btnDondurma = new Button();
             lbToplamBakiye = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sepetGrid).BeginInit();
             SuspendLayout();
             // 
             // btnDomates
@@ -55,7 +55,7 @@
             btnDomates.TabStop = false;
             btnDomates.Text = "Domates";
             btnDomates.UseVisualStyleBackColor = true;
-            btnDomates.Click += button1_Click;
+            btnDomates.Click += btnDomates_click;
             // 
             // btnBiber
             // 
@@ -136,22 +136,22 @@
             btnNakit.Text = "Nakit";
             btnNakit.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // sepetGrid
             // 
-            dataGridView1.BackgroundColor = Color.RosyBrown;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(892, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(430, 634);
-            dataGridView1.TabIndex = 8;
-            dataGridView1.TabStop = false;
+            sepetGrid.BackgroundColor = Color.RosyBrown;
+            sepetGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            sepetGrid.Location = new Point(649, 12);
+            sepetGrid.Name = "sepetGrid";
+            sepetGrid.RowHeadersWidth = 51;
+            sepetGrid.Size = new Size(678, 634);
+            sepetGrid.TabIndex = 8;
+            sepetGrid.TabStop = false;
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.ForestGreen;
-            label1.Location = new Point(892, 649);
+            label1.Location = new Point(828, 649);
             label1.Name = "label1";
             label1.Size = new Size(430, 138);
             label1.TabIndex = 9;
@@ -195,7 +195,7 @@
             // 
             lbToplamBakiye.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lbToplamBakiye.ForeColor = Color.ForestGreen;
-            lbToplamBakiye.Location = new Point(1039, 709);
+            lbToplamBakiye.Location = new Point(975, 709);
             lbToplamBakiye.Name = "lbToplamBakiye";
             lbToplamBakiye.Size = new Size(218, 62);
             lbToplamBakiye.TabIndex = 13;
@@ -212,7 +212,7 @@
             Controls.Add(btnChocolate);
             Controls.Add(btnDondurma);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(sepetGrid);
             Controls.Add(btnNakit);
             Controls.Add(btnPeynirHelva);
             Controls.Add(btnBaklava);
@@ -227,7 +227,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AnadoluTat1071 Market";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sepetGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -241,7 +241,7 @@
         private Button btnBaklava;
         private Button btnGazoz;
         private Button btnNakit;
-        private DataGridView dataGridView1;
+        private DataGridView sepetGrid;
         private Label label1;
         private Button btnSoda;
         private Button btnChocolate;
