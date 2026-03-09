@@ -58,6 +58,18 @@ public class BasketViewModel : INotifyPropertyChanged
         }
     }
 
+    public void RemoveAllProducts() 
+    {
+        if (Products.Count > 0)
+        {
+            for (int i = 0; i < Products.Count; i++) 
+            { 
+                Products.RemoveAt(i);
+            }
+            UpdateTotal();
+        }
+    }
+
     private void UpdateTotal()
     {
         Total = Products.Sum(p => p.TotalPrice);

@@ -126,5 +126,28 @@ namespace MarketCheckOut
 
             gbMiktar.Visible = false;
         }
+
+        private void btnKredi_Click(object sender, EventArgs e)
+        {
+            ShowMessage("Kredi kartı ile ödeme gerçekleştirildi");
+        }
+
+        private void btnNakit_Click(object sender, EventArgs e)
+        {
+            ShowMessage("Nakit olarak ödeme gerçekleştirildi");
+        }
+
+        private void ShowMessage(string message)
+        {
+            if (vm.Products.Count > 0)
+            {
+                vm.RemoveAllProducts();
+                MessageBox.Show(message, "Ödeme Yapıldı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Sepette ürün bulunamadı", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

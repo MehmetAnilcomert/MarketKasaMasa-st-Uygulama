@@ -98,6 +98,7 @@
             btnKredi.TabStop = false;
             btnKredi.Text = "Kredi Kartı";
             btnKredi.UseVisualStyleBackColor = true;
+            btnKredi.Click += btnKredi_Click;
             // 
             // btnPeynirHelva
             // 
@@ -145,6 +146,7 @@
             btnNakit.TabStop = false;
             btnNakit.Text = "Nakit";
             btnNakit.UseVisualStyleBackColor = true;
+            btnNakit.Click += btnNakit_Click;
             // 
             // sepetGrid
             // 
